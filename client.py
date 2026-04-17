@@ -54,3 +54,10 @@ class DatabricksClient:
         response = self.session.get(url, params=params, timeout=30)
         response.raise_for_status()
         return response.json()
+
+    def post(self, path: str, json: Optional[dict] = None) -> dict[str, Any]:
+        """POST JSON to {host}{path} and return parsed JSON."""
+        url = f"{self.host}{path}"
+        response = self.session.post(url, json=json or {}, timeout=30)
+        response.raise_for_status()
+        return response.json() if response.content else {}
