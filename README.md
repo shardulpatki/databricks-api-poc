@@ -75,3 +75,5 @@ output.py            # rich table + JSON renderers
 ```
 
 See `DEMO_SCRIPT.md` for a 10-minute walkthrough aimed at a non-technical audience.
+
+For a file-by-file explanation of how auth and API retrieval actually work, see [`docs/data-retrieval.md`](docs/data-retrieval.md).
