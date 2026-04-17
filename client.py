@@ -8,6 +8,7 @@ and every subsequent call reuses that session.
 from __future__ import annotations
 
 import os
+from datetime import datetime, timezone
 from typing import Any, Optional
 
 import requests
@@ -16,7 +17,7 @@ import requests
 class DatabricksClient:
     """Authenticated HTTP client for the Databricks REST API."""
 
-    def __init__(self, host: Optional[str] = None, token: Optional[str] = None):
+    def __init__(self, host: Optional[str] = None, token: Optional[str] = None, record: bool = False):
         # Env vars are the canonical source; explicit args are here mainly for tests.
         host = host or os.getenv("DATABRICKS_HOST")
         token = token or os.getenv("DATABRICKS_TOKEN")
@@ -44,6 +45,21 @@ class DatabricksClient:
             "Accept": "application/json",
         })
 
+        self.record = record
+        self.calls: list[dict[str, Any]] = []
+
+    def _record(self, method: str, path: str, params: Optional[dict], response: requests.Response, body: Any) -> None:
+        if not self.record:
+            return
+        self.calls.append({
+            "method": method,
+            "path": path,
+            "params": params,
+            "status": response.status_code,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "body": body,
+        })
+
     def get(self, path: str, params: Optional[dict] = None) -> dict[str, Any]:
         """GET {host}{path} and return parsed JSON.
 
@@ -53,7 +69,9 @@ class DatabricksClient:
         url = f"{self.host}{path}"
         response = self.session.get(url, params=params, timeout=30)
         response.raise_for_status()
-        return response.json()
+        body = response.json()
+        self._record("GET", path, params, response, body)
+        return body
 
     def get_text(self, path: str) -> str:
         """GET {host}{path} and return the raw text body.
@@ -64,6 +82,7 @@ class DatabricksClient:
         url = f"{self.host}{path}"
         response = self.session.get(url, headers={"Accept": "text/plain"}, timeout=30)
         response.raise_for_status()
+        self._record("GET", path, None, response, response.text)
         return response.text
 
     def post(self, path: str, json: Optional[dict] = None) -> dict[str, Any]:
@@ -71,4 +90,6 @@ class DatabricksClient:
         url = f"{self.host}{path}"
         response = self.session.post(url, json=json or {}, timeout=30)
         response.raise_for_status()
-        return response.json() if response.content else {}
+        body = response.json() if response.content else {}
+        self._record("POST", path, None, response, body)
+        return body

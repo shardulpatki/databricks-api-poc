@@ -6,12 +6,11 @@ workspace via REST:
 1. **Job runs** — recent runs, with result state and duration
 2. **Clusters** — current state, node type, sizing, uptime
 3. **Serving endpoints** — Model Serving endpoints and their readiness
-4. **Endpoint traffic metrics** — per-endpoint request / 4xx / 5xx counters,
-   parsed from the Prometheus `/metrics` route
-5. **Endpoint events** — recent config-change and deployment events
+4. **Endpoint events** — recent config-change and deployment events
 
-Latency, CPU, and memory are deliberately not shown: the public `/metrics`
-route doesn't emit them. Those signals plus per-request traces live in the
+Traffic metrics, latency, CPU, and memory are deliberately not shown: the
+public `/metrics` route only emits per-minute request counters (which idle
+at zero), and richer signals plus per-request traces live in the
 `system.serving.*` inference tables (SQL only) and are out of scope here.
 
 The code is intentionally small and commented so it can double as a teaching
@@ -49,7 +48,7 @@ python main.py --output json > snapshot.json
 |-------------|---------------------------------------|---------|
 | `--output`  | `table`, `json`                       | `table` |
 | `--hours`   | integer (job-runs lookback)           | `24`    |
-| `--section` | `jobs`, `clusters`, `endpoints`, `endpoint-metrics`, `endpoint-events`, `all` | `all`   |
+| `--section` | `jobs`, `clusters`, `endpoints`, `endpoint-events`, `all` | `all`   |
 
 ## Example output
 
