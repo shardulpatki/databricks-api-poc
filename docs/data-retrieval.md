@@ -71,6 +71,17 @@ Each collector is a module with a single `fetch(client, ...)` function. They dep
 - Walks `payload["clusters"]` and formats sizing as either `autoscale N-M` or `fixed N`.
 - For `RUNNING` clusters, computes uptime from `start_time` (epoch ms) via `_fmt_uptime` — so reviewers can spot clusters left on for days.
 
+### `collectors/permissions.py` → `GET /api/2.0/permissions/...`
+
+`fetch(client)` at `permissions.py:73-117` produces one row per direct ACL grant across four object families:
+
+- Jobs — lists IDs via `GET /api/2.1/jobs/list` (paginated), then `GET /api/2.0/permissions/jobs/{job_id}` per job.
+- Clusters — lists via `/api/2.0/clusters/list`, then `GET /api/2.0/permissions/clusters/{cluster_id}` per cluster.
+- Serving endpoints — lists via `/api/2.0/serving-endpoints` and uses the endpoint `id` (UUID) for `GET /api/2.0/permissions/serving-endpoints/{id}`.
+- Workspace token ACL — single `GET /api/2.0/permissions/authorization/tokens` that controls who can create/use PATs in the workspace.
+
+Each ACL entry is normalized: the principal is `user_name` / `group_name` / `service_principal_name` (mapped to `USER` / `GROUP` / `SERVICE_PRINCIPAL`), and each `all_permissions[]` entry with `inherited == false` becomes one output row. Per-object `HTTPError`s are swallowed (same pattern as `endpoints.py:53-54`) so a single 403/404 doesn't kill the section.
+
 ### `collectors/endpoints.py` → `GET /api/2.0/serving-endpoints` (+ `/{name}/events`)
 
 Two functions:

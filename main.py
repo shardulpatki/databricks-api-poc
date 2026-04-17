@@ -20,6 +20,7 @@ from client import DatabricksClient
 from collectors import clusters as clusters_collector
 from collectors import endpoints as endpoints_collector
 from collectors import jobs as jobs_collector
+from collectors import permissions as permissions_collector
 from output import render_json, render_table
 
 
@@ -50,6 +51,13 @@ ENDPOINT_EVENTS_COLUMNS = [
     ("message", "Message"),
     ("timestamp", "When"),
 ]
+PERMISSIONS_COLUMNS = [
+    ("object_type", "Object Type"),
+    ("object_name", "Object"),
+    ("principal_type", "Principal Type"),
+    ("principal", "Principal"),
+    ("permission_level", "Permission"),
+]
 
 
 def parse_args() -> argparse.Namespace:
@@ -58,7 +66,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--hours", type=int, default=24, help="Lookback window for job runs (default 24).")
     p.add_argument(
         "--section",
-        choices=["jobs", "clusters", "endpoints", "endpoint-events", "all"],
+        choices=["jobs", "clusters", "endpoints", "endpoint-events", "permissions", "all"],
         default="all",
     )
     p.add_argument(
@@ -78,6 +86,8 @@ def collect(section: str, client: DatabricksClient, hours: int) -> list[dict]:
         return endpoints_collector.fetch(client)
     if section == "endpoint-events":
         return endpoints_collector.fetch_events(client)
+    if section == "permissions":
+        return permissions_collector.fetch(client)
     raise ValueError(f"unknown section: {section}")
 
 
@@ -86,6 +96,7 @@ SECTION_META = {
     "clusters": ("Clusters", CLUSTER_COLUMNS),
     "endpoints": ("Serving Endpoints", ENDPOINT_COLUMNS),
     "endpoint-events": ("Serving Endpoint Events", ENDPOINT_EVENTS_COLUMNS),
+    "permissions": ("Permissions", PERMISSIONS_COLUMNS),
 }
 
 
@@ -99,7 +110,7 @@ def main() -> int:
         print(f"Configuration error: {e}", file=sys.stderr)
         return 2
 
-    all_sections = ["jobs", "clusters", "endpoints", "endpoint-events"]
+    all_sections = ["jobs", "clusters", "endpoints", "endpoint-events", "permissions"]
     sections = all_sections if args.section == "all" else [args.section]
 
     results: dict[str, list[dict]] = {}

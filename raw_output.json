@@ -4,12 +4,12 @@
       "method": "GET",
       "path": "/api/2.1/jobs/runs/list",
       "params": {
-        "start_time_from": 1776347729342,
+        "start_time_from": 1776363101538,
         "limit": 25,
         "expand_tasks": "false"
       },
       "status": 200,
-      "timestamp": "2026-04-17T13:55:30.372200+00:00",
+      "timestamp": "2026-04-17T18:11:42.337551+00:00",
       "body": {
         "runs": [
           {
@@ -59,7 +59,7 @@
       "path": "/api/2.0/clusters/list",
       "params": null,
       "status": 200,
-      "timestamp": "2026-04-17T13:55:30.506808+00:00",
+      "timestamp": "2026-04-17T18:11:42.492364+00:00",
       "body": {}
     }
   ],
@@ -69,7 +69,7 @@
       "path": "/api/2.0/serving-endpoints",
       "params": null,
       "status": 200,
-      "timestamp": "2026-04-17T13:55:30.676339+00:00",
+      "timestamp": "2026-04-17T18:11:42.632256+00:00",
       "body": {
         "endpoints": [
           {
@@ -146,7 +146,7 @@
             "name": "supervisor-agent-endpoint",
             "creator": "shardul.patki@theoremlabs.io",
             "creation_timestamp": 1776280096000,
-            "last_updated_timestamp": 1776281987000,
+            "last_updated_timestamp": 1776438012000,
             "state": {
               "ready": "READY",
               "config_update": "NOT_UPDATING",
@@ -174,6 +174,17 @@
             "id": "5c1dde6fc58c41c4b6e04d5d6a9274b5",
             "route_optimized": false,
             "permission_level": "CAN_MANAGE",
+            "ai_gateway": {
+              "usage_tracking_config": {
+                "enabled": false
+              },
+              "inference_table_config": {
+                "catalog_name": "ace_loan_catalogue",
+                "schema_name": "telemetry",
+                "table_name_prefix": "supervisor_agent",
+                "enabled": true
+              }
+            },
             "creator_display_name": "",
             "creator_kind": "User",
             "description": ""
@@ -992,961 +1003,6 @@
           }
         ]
       }
-    }
-  ],
-  "endpoint-metrics": [
-    {
-      "method": "GET",
-      "path": "/api/2.0/serving-endpoints",
-      "params": null,
-      "status": 200,
-      "timestamp": "2026-04-17T13:55:30.856018+00:00",
-      "body": {
-        "endpoints": [
-          {
-            "name": "lending-context-agent-endpoint",
-            "creator": "shardul.patki@theoremlabs.io",
-            "creation_timestamp": 1776209596000,
-            "last_updated_timestamp": 1776431196000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING",
-              "suspend": "NOT_SUSPENDED",
-              "system_update_failure": false
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "lending-context-agent",
-                  "entity_name": "ace_loan_catalogue.agents.page_context_agent",
-                  "entity_version": "8",
-                  "type": "UC_MODEL"
-                }
-              ],
-              "served_models": [
-                {
-                  "name": "lending-context-agent",
-                  "model_name": "ace_loan_catalogue.agents.page_context_agent",
-                  "model_version": "8",
-                  "type": "UC_MODEL"
-                }
-              ]
-            },
-            "id": "4078c03bb92a4a2e9a91132f836c2ed0",
-            "route_optimized": false,
-            "permission_level": "CAN_MANAGE",
-            "creator_display_name": "",
-            "creator_kind": "User",
-            "description": ""
-          },
-          {
-            "name": "rag-agent-endpoint",
-            "creator": "shardul.patki@theoremlabs.io",
-            "creation_timestamp": 1775860358000,
-            "last_updated_timestamp": 1775860358000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING",
-              "suspend": "NOT_SUSPENDED",
-              "system_update_failure": false
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "rag-agent",
-                  "entity_name": "ace_loan_catalogue.policy_documents.rag_agent",
-                  "entity_version": "1"
-                }
-              ],
-              "served_models": [
-                {
-                  "name": "rag-agent",
-                  "model_name": "ace_loan_catalogue.policy_documents.rag_agent",
-                  "model_version": "1"
-                }
-              ]
-            },
-            "id": "bd536115cb844e09b37c575701e6db2d",
-            "route_optimized": false,
-            "permission_level": "CAN_MANAGE",
-            "creator_display_name": "",
-            "creator_kind": "User",
-            "description": ""
-          },
-          {
-            "name": "supervisor-agent-endpoint",
-            "creator": "shardul.patki@theoremlabs.io",
-            "creation_timestamp": 1776280096000,
-            "last_updated_timestamp": 1776281987000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING",
-              "suspend": "NOT_SUSPENDED",
-              "system_update_failure": false
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "supervisor-agent",
-                  "entity_name": "ace_loan_catalogue.agents.supervisor_agent",
-                  "entity_version": "4",
-                  "type": "UC_MODEL"
-                }
-              ],
-              "served_models": [
-                {
-                  "name": "supervisor-agent",
-                  "model_name": "ace_loan_catalogue.agents.supervisor_agent",
-                  "model_version": "4",
-                  "type": "UC_MODEL"
-                }
-              ]
-            },
-            "id": "5c1dde6fc58c41c4b6e04d5d6a9274b5",
-            "route_optimized": false,
-            "permission_level": "CAN_MANAGE",
-            "creator_display_name": "",
-            "creator_kind": "User",
-            "description": ""
-          },
-          {
-            "name": "databricks-gpt-5-4",
-            "creation_timestamp": 1772668800000,
-            "last_updated_timestamp": 1772668800000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-5-4",
-                  "entity_name": "system.ai.databricks-gpt-5-4",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.databricks-gpt-5-4",
-                    "display_name": "GPT-5.4",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-4",
-                    "description": "GPT-5.4 is a general purpose large language model with reasoning capabilities developed by OpenAI. It delivers improved performance on complex tasks with enhanced accuracy and more deliberate scaffolded reasoning. This model supports multimodal inputs and features a 400K total token context window with 128K maximum output tokens. This endpoint is hosted by Databricks.",
-                    "price": "321.429",
-                    "input_price": "35.714",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt",
-                    "api_types": [
-                      "mlflow/v1/chat/completions",
-                      "openai/v1/responses",
-                      "cursor/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 76.9,
-                      "cost": 5.63,
-                      "quality": 57.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "openai_reasoning": false,
-              "anthropic_reasoning": false,
-              "image_input": true,
-              "long_context": true,
-              "video_input_translation": false,
-              "audio_input_translation": false
-            }
-          },
-          {
-            "name": "databricks-gpt-5-4-mini",
-            "creation_timestamp": 1773705600000,
-            "last_updated_timestamp": 1773705600000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-5-4-mini",
-                  "entity_name": "system.ai.databricks-gpt-5-4-mini",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.databricks-gpt-5-4-mini",
-                    "display_name": "GPT-5.4 Mini",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-4-mini",
-                    "description": "GPT-5.4 Mini is a cost-optimized large language model developed by OpenAI. This endpoint is hosted by Databricks.",
-                    "price": "64.286",
-                    "input_price": "10.714",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt",
-                    "api_types": [
-                      "mlflow/v1/chat/completions",
-                      "openai/v1/responses",
-                      "cursor/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 227.4,
-                      "cost": 1.69,
-                      "quality": 48.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "openai_reasoning": false,
-              "anthropic_reasoning": false,
-              "image_input": true,
-              "long_context": false,
-              "video_input_translation": false,
-              "audio_input_translation": false
-            }
-          },
-          {
-            "name": "databricks-gpt-5-4-nano",
-            "creation_timestamp": 1773705600000,
-            "last_updated_timestamp": 1773705600000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-5-4-nano",
-                  "entity_name": "system.ai.databricks-gpt-5-4-nano",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.databricks-gpt-5-4-nano",
-                    "display_name": "GPT-5.4 Nano",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-4-nano",
-                    "description": "GPT-5.4 Nano is a lightweight, cost-optimized large language model developed by OpenAI. This endpoint is hosted by Databricks.",
-                    "price": "17.857",
-                    "input_price": "2.857",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt",
-                    "api_types": [
-                      "mlflow/v1/chat/completions",
-                      "openai/v1/responses",
-                      "cursor/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 216.8,
-                      "cost": 0.46,
-                      "quality": 44.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "openai_reasoning": false,
-              "anthropic_reasoning": false,
-              "image_input": true,
-              "long_context": false,
-              "video_input_translation": false,
-              "audio_input_translation": false
-            }
-          },
-          {
-            "name": "databricks-gpt-5-2",
-            "creation_timestamp": 1765238400000,
-            "last_updated_timestamp": 1765238400000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-5-2",
-                  "entity_name": "system.ai.databricks-gpt-5-2",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.databricks-gpt-5-2",
-                    "display_name": "GPT-5.2",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-2",
-                    "description": "GPT-5.2 is a general purpose large language model with reasoning capabilities developed by OpenAI. This model builds directly upon GPT-5.1, offering higher accuracy, improved token efficiency on medium-to-complex tasks, and more deliberate scaffolded reasoning. This model excels at structured extraction, multi-step workflows, and multimodal tasks. It supports multimodal inputs and features a 400K total token context window with 128K maximum output tokens. This endpoint is hosted by Databricks.",
-                    "price": "200.0",
-                    "input_price": "25.0",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt",
-                    "api_types": [
-                      "mlflow/v1/chat/completions",
-                      "openai/v1/responses",
-                      "cursor/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 75.8,
-                      "cost": 4.81,
-                      "quality": 51.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "image_input": true
-            }
-          },
-          {
-            "name": "databricks-gpt-oss-120b",
-            "creation_timestamp": 1754179200000,
-            "last_updated_timestamp": 1754179200000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-oss-120b",
-                  "entity_name": "system.ai.gpt-oss-120b",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.gpt-oss-120b",
-                    "display_name": "GPT OSS 120B",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#openai-gpt-120b",
-                    "description": "GPT OSS 120B is a state-of-the-art, reasoning model with chain-of-thought and adjustable reasoning effort levels built and trained by OpenAI. It is OpenAI's flagship open-weight model that features a 128K token context window. The model is built for high-quality reasoning tasks.",
-                    "price": "8.571",
-                    "input_price": "2.143",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt-oss",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 266.5,
-                      "cost": 0.26,
-                      "quality": 33.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "openai_reasoning": true
-            }
-          },
-          {
-            "name": "databricks-gpt-5-3-codex",
-            "creation_timestamp": 1771891200000,
-            "last_updated_timestamp": 1771891200000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-5-3-codex",
-                  "entity_name": "system.ai.databricks-gpt-5-3-codex",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.databricks-gpt-5-3-codex",
-                    "display_name": "GPT-5.3 Codex",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-3-codex",
-                    "description": "GPT-5.3 Codex is OpenAI's advanced code-specialized large language model. This endpoint is hosted by Databricks.",
-                    "price": "200.0",
-                    "input_price": "25.0",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt",
-                    "api_types": [
-                      "openai/v1/responses",
-                      "cursor/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 67.2,
-                      "cost": 4.81,
-                      "quality": 54.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "openai_reasoning": false,
-              "anthropic_reasoning": false,
-              "image_input": true,
-              "long_context": false,
-              "video_input_translation": false,
-              "audio_input_translation": false
-            }
-          },
-          {
-            "name": "databricks-gpt-5-2-codex",
-            "creation_timestamp": 1767139200000,
-            "last_updated_timestamp": 1767139200000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-5-2-codex",
-                  "entity_name": "system.ai.databricks-gpt-5-2-codex",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.databricks-gpt-5-2-codex",
-                    "display_name": "GPT-5.2 Codex",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-2-codex",
-                    "description": "GPT-5.2 Codex is OpenAI's most advanced code-specialized large language model. Built on GPT-5.2 architecture with enhanced coding capabilities, it excels at code generation, refactoring, debugging, and software engineering tasks. The model supports multimodal inputs and features a 400K total token context window with 128K maximum output tokens. This endpoint is hosted by Databricks.",
-                    "price": "200.0",
-                    "input_price": "25.0",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt",
-                    "api_types": [
-                      "openai/v1/responses",
-                      "cursor/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 115.5,
-                      "cost": 4.81,
-                      "quality": 49.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "openai_reasoning": false,
-              "anthropic_reasoning": false,
-              "image_input": true,
-              "long_context": false,
-              "video_input_translation": false,
-              "audio_input_translation": false
-            }
-          },
-          {
-            "name": "databricks-gpt-oss-20b",
-            "creation_timestamp": 1754179200000,
-            "last_updated_timestamp": 1754179200000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-oss-20b",
-                  "entity_name": "system.ai.gpt-oss-20b",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.gpt-oss-20b",
-                    "display_name": "GPT OSS 20B",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#openai-gpt-20b",
-                    "description": "GPT OSS 20B is a state-of-the-art, lightweight reasoning model built and trained by OpenAI. This model also has a 128K token context window and excels at real-time copilots and batch inference tasks.",
-                    "price": "4.286",
-                    "input_price": "1.0",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt-oss",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 263.7,
-                      "cost": 0.09,
-                      "quality": 24.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "openai_reasoning": true
-            }
-          },
-          {
-            "name": "databricks-qwen3-next-80b-a3b-instruct",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-qwen3-next-80b-a3b-instruct",
-                  "entity_name": "system.ai.qwen3-next-80b-a3b-instruct",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.qwen3-next-80b-a3b-instruct",
-                    "display_name": "Qwen3 Next Instruct",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#qwen3-next-80b-a3b-instruct",
-                    "description": "Qwen3-Next-80B-A3B-Instruct is a highly efficient large language model optimized for instruction-following tasks built and trained by Alibaba Cloud. This model is designed to handle ultra-long contexts and excels at multi-step workflows, retrieval-augmented generation, and enterprise applications that require deterministic outputs at high throughput. This endpoint is hosted by Databricks.",
-                    "price": "17.143",
-                    "input_price": "2.143",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "qwen",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 152.0,
-                      "cost": 0.88,
-                      "quality": 20.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true
-            }
-          },
-          {
-            "name": "databricks-llama-4-maverick",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-llama-4-maverick",
-                  "entity_name": "system.ai.llama-4-maverick",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.llama-4-maverick",
-                    "display_name": "Llama 4 Maverick",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-4-maverick",
-                    "description": "Llama 4 Maverick is a state-of-the-art mixture of experts (MoE) language model trained and released by Meta. The model has 17B active parameters, 128 experts, and 400 billion total parameters. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases, supporting 12 languages, and is aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Llama 4 is licensed under the Meta Llama 4 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
-                    "price": "21.429",
-                    "input_price": "7.143",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "llama",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 123.5,
-                      "cost": 0.49,
-                      "quality": 18.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "image_input": true
-            }
-          },
-          {
-            "name": "databricks-gemma-3-12b",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gemma-3-12b",
-                  "entity_name": "system.ai.gemma-3-12b-it",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.gemma-3-12b-it",
-                    "display_name": "Gemma 3 12B",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#google-gemma-3-12b",
-                    "description": "Gemma 3 12B is a state-of-the-art multimodal language model built and trained by Google. The model supports a context length of 128K tokens and can analyze images and text. With support for over 140 languages and optimized for dialogue use cases, Gemma 3 12B is aligned with human preferences for helpfulness and safety. This endpoint is hosted by Databricks.",
-                    "price": "7.143",
-                    "input_price": "2.143",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gemma-3",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 29.2,
-                      "cost": 0.0,
-                      "quality": 9.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "image_input": true
-            }
-          },
-          {
-            "name": "databricks-gte-large-en",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gte-large-en",
-                  "entity_name": "system.ai.gte_large_en_v1_5",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.gte_large_en_v1_5",
-                    "display_name": "GTE Large (En)",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gte-large",
-                    "description": "General text embeddings (GTE) can map any text to a low-dimensional dense vector which can be used for tasks like retrieval, classification, clustering, or semantic search. And it also can be used in vector databases for LLMs.",
-                    "price": "1.857",
-                    "input_price": "1.857",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gte",
-                    "api_types": [
-                      "mlflow/v1/embeddings"
-                    ],
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/embeddings",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {}
-          },
-          {
-            "name": "databricks-bge-large-en",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-bge-large-en",
-                  "entity_name": "system.ai.bge_large_en_v1_5",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.bge_large_en_v1_5",
-                    "display_name": "BGE Large (En)",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#bge-large",
-                    "description": "BAAI general embedding (BGE) can map any text to a low-dimensional dense vector which can be used for tasks like retrieval, classification, clustering, or semantic search. And it also can be used in vector databases for LLMs.",
-                    "price": "1.429",
-                    "input_price": "1.429",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gte",
-                    "api_types": [
-                      "mlflow/v1/embeddings"
-                    ],
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/embeddings",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {}
-          },
-          {
-            "name": "databricks-gpt-5-1",
-            "creation_timestamp": 1762992000000,
-            "last_updated_timestamp": 1762992000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-gpt-5-1",
-                  "entity_name": "system.ai.databricks-gpt-5-1",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.databricks-gpt-5-1",
-                    "display_name": "GPT-5.1",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-1",
-                    "description": "GPT-5.1 is a general purpose large language model with reasoning capabilities developed by OpenAI. This model features both Instant and Thinking modes for fast conversation or deep reasoning, automatically adjusting for simple or complex tasks. The model excels at content creation, tutoring, technical support, and coding, with less reliance on strict prompt engineering than prior versions. It supports multimodal inputs and features a 128K token context window. This endpoint is hosted by Databricks.",
-                    "price": "142.857",
-                    "input_price": "17.857",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "gpt",
-                    "api_types": [
-                      "mlflow/v1/chat/completions",
-                      "openai/v1/responses",
-                      "cursor/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 105.7,
-                      "cost": 3.44,
-                      "quality": 48.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true,
-              "image_input": true
-            }
-          },
-          {
-            "name": "databricks-meta-llama-3-1-8b-instruct",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-meta-llama-3-1-8b-instruct",
-                  "entity_name": "system.ai.meta_llama_v3_1_8b_instruct",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.meta_llama_v3_1_8b_instruct",
-                    "display_name": "Meta Llama 3.1 8B Instruct",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-3-8b-instruct",
-                    "description": "Llama 3.1 is a state-of-the-art 8B parameter dense language model trained and released by Meta. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases and aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Meta Llama 3.1 is licensed under the Meta Llama 3.1 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
-                    "price": "6.429",
-                    "input_price": "2.143",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "llama",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 156.4,
-                      "cost": 0.1,
-                      "quality": 12.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {}
-          },
-          {
-            "name": "databricks-meta-llama-3-3-70b-instruct",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-meta-llama-3-3-70b-instruct",
-                  "entity_name": "system.ai.llama_v3_3_70b_instruct",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.llama_v3_3_70b_instruct",
-                    "display_name": "Meta Llama 3.3 70B Instruct",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-33-70b-instruct",
-                    "description": "Llama 3.3 is a state-of-the-art 70B parameter dense language model trained and released by Meta. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases and aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Meta Llama 3.3 is licensed under the Meta Llama 3.3 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
-                    "price": "21.429",
-                    "input_price": "7.143",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "llama",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_model_profile": {
-                      "speed": 86.0,
-                      "cost": 0.64,
-                      "quality": 14.0
-                    },
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true
-            }
-          },
-          {
-            "name": "databricks-qwen3-embedding-0-6b",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-qwen3-embedding-0-6b",
-                  "entity_name": "system.ai.qwen3-embedding-0-6b",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.qwen3-embedding-0-6b",
-                    "display_name": "Qwen3 Embedding 0.6B",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#qwen3-embedding-0-6b",
-                    "description": "Qwen3 Embedding is a multilingual text embedding model that can map any text to a low-dimensional dense vector which can be used for tasks like retrieval, classification, clustering, or semantic search. This endpoint is hosted by Databricks.",
-                    "price": "0.286",
-                    "input_price": "0.286",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "qwen",
-                    "api_types": [
-                      "mlflow/v1/embeddings"
-                    ],
-                    "ai_gateway_v2_supported": true
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/embeddings",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {}
-          },
-          {
-            "name": "databricks-meta-llama-3.1-405b-instruct",
-            "creation_timestamp": 1699610000000,
-            "last_updated_timestamp": 1699610000000,
-            "state": {
-              "ready": "READY",
-              "config_update": "NOT_UPDATING"
-            },
-            "config": {
-              "served_entities": [
-                {
-                  "name": "databricks-meta-llama-3.1-405b-instruct",
-                  "entity_name": "system.ai.meta_llama_v3_1_405b_instruct_fp8",
-                  "type": "FOUNDATION_MODEL",
-                  "foundation_model": {
-                    "name": "system.ai.meta_llama_v3_1_405b_instruct_fp8",
-                    "display_name": "Meta Llama 3.1 405B Instruct",
-                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-31-405b-instruct",
-                    "description": "Llama 3.1 is a state-of-the-art 405B parameter dense language model trained and released by Meta. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases and aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Meta Llama 3.1 is licensed under the Meta Llama 3.1 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
-                    "price": "142.857",
-                    "input_price": "35.714",
-                    "price_unit": "DBUs per 1M tokens",
-                    "pricing_model": "Pay-per-token",
-                    "model_class": "llama",
-                    "api_types": [
-                      "mlflow/v1/chat/completions"
-                    ],
-                    "ai_gateway_v2_supported": false
-                  }
-                }
-              ]
-            },
-            "task": "llm/v1/chat",
-            "endpoint_type": "FOUNDATION_MODEL_API",
-            "permission_level": "CAN_MANAGE",
-            "capabilities": {
-              "function_calling": true
-            }
-          }
-        ]
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/api/2.0/serving-endpoints/lending-context-agent-endpoint/metrics",
-      "params": null,
-      "status": 200,
-      "timestamp": "2026-04-17T13:55:30.987433+00:00",
-      "body": "# HELP request_4xx_count_total Total number of 4xx errors during the minute\n# TYPE request_4xx_count_total gauge\nrequest_4xx_count_total{workspaceId=\"7474651147007065\",endpointName=\"lending-context-agent-endpoint\",servedModelName=\"lending-context-agent\",} 0.0 1776433980000\n# HELP request_5xx_count_total Total number of 5xx errors during the minute\n# TYPE request_5xx_count_total gauge\nrequest_5xx_count_total{workspaceId=\"7474651147007065\",endpointName=\"lending-context-agent-endpoint\",servedModelName=\"lending-context-agent\",} 0.0 1776433980000\n# HELP request_count_total Total number of requests during the minute\n# TYPE request_count_total gauge\nrequest_count_total{workspaceId=\"7474651147007065\",endpointName=\"lending-context-agent-endpoint\",servedModelName=\"lending-context-agent\",} 0.0 1776433980000\n"
-    },
-    {
-      "method": "GET",
-      "path": "/api/2.0/serving-endpoints/rag-agent-endpoint/metrics",
-      "params": null,
-      "status": 200,
-      "timestamp": "2026-04-17T13:55:31.115541+00:00",
-      "body": "# HELP request_count_total Total number of requests during the minute\n# TYPE request_count_total gauge\nrequest_count_total{workspaceId=\"7474651147007065\",endpointName=\"rag-agent-endpoint\",servedModelName=\"rag-agent\",} 0.0 1776433980000\n# HELP request_4xx_count_total Total number of 4xx errors during the minute\n# TYPE request_4xx_count_total gauge\nrequest_4xx_count_total{workspaceId=\"7474651147007065\",endpointName=\"rag-agent-endpoint\",servedModelName=\"rag-agent\",} 0.0 1776433980000\n# HELP request_5xx_count_total Total number of 5xx errors during the minute\n# TYPE request_5xx_count_total gauge\nrequest_5xx_count_total{workspaceId=\"7474651147007065\",endpointName=\"rag-agent-endpoint\",servedModelName=\"rag-agent\",} 0.0 1776433980000\n"
-    },
-    {
-      "method": "GET",
-      "path": "/api/2.0/serving-endpoints/supervisor-agent-endpoint/metrics",
-      "params": null,
-      "status": 200,
-      "timestamp": "2026-04-17T13:55:31.237713+00:00",
-      "body": "# HELP request_count_total Total number of requests during the minute\n# TYPE request_count_total gauge\nrequest_count_total{workspaceId=\"7474651147007065\",endpointName=\"supervisor-agent-endpoint\",servedModelName=\"supervisor-agent\",} 0.0 1776433980000\n# HELP request_4xx_count_total Total number of 4xx errors during the minute\n# TYPE request_4xx_count_total gauge\nrequest_4xx_count_total{workspaceId=\"7474651147007065\",endpointName=\"supervisor-agent-endpoint\",servedModelName=\"supervisor-agent\",} 0.0 1776433980000\n# HELP request_5xx_count_total Total number of 5xx errors during the minute\n# TYPE request_5xx_count_total gauge\nrequest_5xx_count_total{workspaceId=\"7474651147007065\",endpointName=\"supervisor-agent-endpoint\",servedModelName=\"supervisor-agent\",} 0.0 1776433980000\n"
     }
   ],
   "endpoint-events": [
@@ -1955,7 +1011,7 @@
       "path": "/api/2.0/serving-endpoints",
       "params": null,
       "status": 200,
-      "timestamp": "2026-04-17T13:55:33.454841+00:00",
+      "timestamp": "2026-04-17T18:11:42.789128+00:00",
       "body": {
         "endpoints": [
           {
@@ -2032,7 +1088,7 @@
             "name": "supervisor-agent-endpoint",
             "creator": "shardul.patki@theoremlabs.io",
             "creation_timestamp": 1776280096000,
-            "last_updated_timestamp": 1776281987000,
+            "last_updated_timestamp": 1776438012000,
             "state": {
               "ready": "READY",
               "config_update": "NOT_UPDATING",
@@ -2060,6 +1116,17 @@
             "id": "5c1dde6fc58c41c4b6e04d5d6a9274b5",
             "route_optimized": false,
             "permission_level": "CAN_MANAGE",
+            "ai_gateway": {
+              "usage_tracking_config": {
+                "enabled": false
+              },
+              "inference_table_config": {
+                "catalog_name": "ace_loan_catalogue",
+                "schema_name": "telemetry",
+                "table_name_prefix": "supervisor_agent",
+                "enabled": true
+              }
+            },
             "creator_display_name": "",
             "creator_kind": "User",
             "description": ""
@@ -2884,7 +1951,7 @@
       "path": "/api/2.0/serving-endpoints/lending-context-agent-endpoint/events",
       "params": null,
       "status": 200,
-      "timestamp": "2026-04-17T13:55:33.579157+00:00",
+      "timestamp": "2026-04-17T18:11:42.932982+00:00",
       "body": {
         "events": [
           {
@@ -2916,6 +1983,12 @@
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `lending-context-agent` entered DEPLOYMENT_READY state: Scaling from zero",
             "timestamp": 1776288048005
+          },
+          {
+            "endpoint_name": "lending-context-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `lending-context-agent` entered DEPLOYMENT_READY state: Scaled to zero",
+            "timestamp": 1776440491977
           },
           {
             "endpoint_name": "lending-context-agent-endpoint",
@@ -3075,6 +2148,12 @@
           },
           {
             "endpoint_name": "lending-context-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `lending-context-agent` entered DEPLOYMENT_READY state.",
+            "timestamp": 1776436811975
+          },
+          {
+            "endpoint_name": "lending-context-agent-endpoint",
             "event_type": "ENDPOINT_UPDATE_EVENT",
             "message": "Endpoint update succeeded for endpoint `lending-context-agent-endpoint`, config version 6.",
             "timestamp": 1776431388514
@@ -3108,6 +2187,12 @@
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `lending-context-agent` entered DEPLOYMENT_READY state.",
             "timestamp": 1776267332273
+          },
+          {
+            "endpoint_name": "lending-context-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `lending-context-agent` entered DEPLOYMENT_READY state: Scaling from zero",
+            "timestamp": 1776436631726
           },
           {
             "endpoint_name": "lending-context-agent-endpoint",
@@ -3513,7 +2598,7 @@
       "path": "/api/2.0/serving-endpoints/rag-agent-endpoint/events",
       "params": null,
       "status": 200,
-      "timestamp": "2026-04-17T13:55:33.699346+00:00",
+      "timestamp": "2026-04-17T18:11:43.060072+00:00",
       "body": {
         "events": [
           {
@@ -3562,6 +2647,12 @@
             "endpoint_name": "rag-agent-endpoint",
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `rag-agent` entered DEPLOYMENT_READY state.",
+            "timestamp": 1776436075994
+          },
+          {
+            "endpoint_name": "rag-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `rag-agent` entered DEPLOYMENT_READY state.",
             "timestamp": 1776431676611
           },
           {
@@ -3587,6 +2678,12 @@
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `rag-agent` entered DEPLOYMENT_READY state.",
             "timestamp": 1776277111834
+          },
+          {
+            "endpoint_name": "rag-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `rag-agent` entered DEPLOYMENT_READY state: Scaled to zero",
+            "timestamp": 1776440496214
           },
           {
             "endpoint_name": "rag-agent-endpoint",
@@ -3687,6 +2784,12 @@
           {
             "endpoint_name": "rag-agent-endpoint",
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `rag-agent` entered DEPLOYMENT_READY state: Scaling from zero",
+            "timestamp": 1776436036110
+          },
+          {
+            "endpoint_name": "rag-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `rag-agent` entered DEPLOYMENT_READY state.",
             "timestamp": 1776097914512
           },
@@ -3761,7 +2864,7 @@
       "path": "/api/2.0/serving-endpoints/supervisor-agent-endpoint/events",
       "params": null,
       "status": 200,
-      "timestamp": "2026-04-17T13:55:33.825224+00:00",
+      "timestamp": "2026-04-17T18:11:43.182381+00:00",
       "body": {
         "events": [
           {
@@ -3780,7 +2883,31 @@
             "endpoint_name": "supervisor-agent-endpoint",
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `supervisor-agent` entered DEPLOYMENT_CREATING state: Deploying",
+            "timestamp": 1776435911668
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_READY state.",
+            "timestamp": 1776435953744
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "ENDPOINT_UPDATE_EVENT",
+            "message": "Endpoint updated by shardul.patki@theoremlabs.io.",
+            "timestamp": 1776435817426
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_CREATING state: Deploying",
             "timestamp": 1776280521700
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_CREATING state: Provisioning resources",
+            "timestamp": 1776435892698
           },
           {
             "endpoint_name": "supervisor-agent-endpoint",
@@ -3815,8 +2942,20 @@
           {
             "endpoint_name": "supervisor-agent-endpoint",
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_CREATING state: Provisioning resources",
+            "timestamp": 1776438149597
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `supervisor-agent` entered DEPLOYMENT_READY state.",
             "timestamp": 1776280580772
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_READY state.",
+            "timestamp": 1776438208225
           },
           {
             "endpoint_name": "supervisor-agent-endpoint",
@@ -3857,6 +2996,12 @@
           {
             "endpoint_name": "supervisor-agent-endpoint",
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_READY state: Scaled to zero",
+            "timestamp": 1776438191642
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `supervisor-agent` entered DEPLOYMENT_CREATING state: Pending Container Creation",
             "timestamp": 1776281999627
           },
@@ -3886,15 +3031,39 @@
           },
           {
             "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "ENDPOINT_UPDATE_EVENT",
+            "message": "Endpoint update succeeded for endpoint `supervisor-agent-endpoint`, config version 4.",
+            "timestamp": 1776438211511
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_CREATING state: Deploying",
+            "timestamp": 1776438168646
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `supervisor-agent` entered DEPLOYMENT_READY state: Scaling from zero",
             "timestamp": 1776299902883
           },
           {
             "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "ENDPOINT_UPDATE_EVENT",
+            "message": "Endpoint update succeeded for endpoint `supervisor-agent-endpoint`, config version 3.",
+            "timestamp": 1776435969263
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
             "event_type": "SERVED_ENTITY_SERVICE_EVENT",
             "message": "Served entity `supervisor-agent` entered DEPLOYMENT_CREATING state: Deploying",
             "timestamp": 1776282498173
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity `supervisor-agent` entered DEPLOYMENT_READY state: Scaled to zero",
+            "timestamp": 1776440488472
           },
           {
             "endpoint_name": "supervisor-agent-endpoint",
@@ -3997,6 +3166,1206 @@
             "event_type": "ENDPOINT_UPDATE_EVENT",
             "message": "System service principal creation with ID `e289048f-5d9c-4dd2-9fac-10f5ab26441e` succeeded for served entity `supervisor-agent`, config version 2.",
             "timestamp": 1776281998841
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "served_model_name": "supervisor-agent",
+            "served_entity_name": "supervisor-agent",
+            "config_version": 3,
+            "event_type": "ENDPOINT_UPDATE_EVENT",
+            "message": "System service principal creation with ID `20aa1271-9a8c-4288-9cb0-c6b98fabb955` succeeded for served entity `supervisor-agent`, config version 3.",
+            "timestamp": 1776435827841
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "served_model_name": "supervisor-agent",
+            "served_entity_name": "supervisor-agent",
+            "config_version": 3,
+            "event_type": "SERVED_ENTITY_CREATION_EVENT",
+            "message": "Served entity created for served entity `supervisor-agent`, config version 3.",
+            "timestamp": 1776435827893
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "served_model_name": "supervisor-agent",
+            "served_entity_name": "supervisor-agent",
+            "config_version": 3,
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity creation succeeded for served entity `supervisor-agent`, config version 3.",
+            "timestamp": 1776435969216
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "served_model_name": "supervisor-agent",
+            "served_entity_name": "supervisor-agent",
+            "config_version": 4,
+            "event_type": "ENDPOINT_UPDATE_EVENT",
+            "message": "System service principal creation with ID `143dd897-a30d-4d58-bc20-093caab91c0b` succeeded for served entity `supervisor-agent`, config version 4.",
+            "timestamp": 1776438018197
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "served_model_name": "supervisor-agent",
+            "served_entity_name": "supervisor-agent",
+            "config_version": 4,
+            "event_type": "SERVED_ENTITY_SERVICE_EVENT",
+            "message": "Served entity creation succeeded for served entity `supervisor-agent`, config version 4.",
+            "timestamp": 1776438211497
+          },
+          {
+            "endpoint_name": "supervisor-agent-endpoint",
+            "served_model_name": "supervisor-agent",
+            "served_entity_name": "supervisor-agent",
+            "config_version": 4,
+            "event_type": "SERVED_ENTITY_CREATION_EVENT",
+            "message": "Served entity created for served entity `supervisor-agent`, config version 4.",
+            "timestamp": 1776438018223
+          }
+        ]
+      }
+    }
+  ],
+  "permissions": [
+    {
+      "method": "GET",
+      "path": "/api/2.1/jobs/list",
+      "params": {
+        "limit": 25,
+        "expand_tasks": "false"
+      },
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:45.576598+00:00",
+      "body": {
+        "jobs": [
+          {
+            "job_id": 18326261239635,
+            "creator_user_name": "shardul.patki@theoremlabs.io",
+            "run_as_user_name": "shardul.patki@theoremlabs.io",
+            "settings": {
+              "name": "poc-seed-job",
+              "email_notifications": {},
+              "timeout_seconds": 0,
+              "max_concurrent_runs": 1,
+              "format": "MULTI_TASK"
+            },
+            "created_time": 1776404101706
+          }
+        ],
+        "has_more": false
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/2.0/permissions/jobs/18326261239635",
+      "params": null,
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:45.771557+00:00",
+      "body": {
+        "object_id": "/jobs/18326261239635",
+        "object_type": "job",
+        "access_control_list": [
+          {
+            "user_name": "shardul.patki@theoremlabs.io",
+            "all_permissions": [
+              {
+                "permission_level": "IS_OWNER",
+                "inherited": false
+              }
+            ]
+          },
+          {
+            "group_name": "admins",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": true,
+                "inherited_from_object": [
+                  "/jobs/"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/2.0/clusters/list",
+      "params": null,
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:45.936405+00:00",
+      "body": {}
+    },
+    {
+      "method": "GET",
+      "path": "/api/2.0/serving-endpoints",
+      "params": null,
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:46.065410+00:00",
+      "body": {
+        "endpoints": [
+          {
+            "name": "lending-context-agent-endpoint",
+            "creator": "shardul.patki@theoremlabs.io",
+            "creation_timestamp": 1776209596000,
+            "last_updated_timestamp": 1776431196000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING",
+              "suspend": "NOT_SUSPENDED",
+              "system_update_failure": false
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "lending-context-agent",
+                  "entity_name": "ace_loan_catalogue.agents.page_context_agent",
+                  "entity_version": "8",
+                  "type": "UC_MODEL"
+                }
+              ],
+              "served_models": [
+                {
+                  "name": "lending-context-agent",
+                  "model_name": "ace_loan_catalogue.agents.page_context_agent",
+                  "model_version": "8",
+                  "type": "UC_MODEL"
+                }
+              ]
+            },
+            "id": "4078c03bb92a4a2e9a91132f836c2ed0",
+            "route_optimized": false,
+            "permission_level": "CAN_MANAGE",
+            "creator_display_name": "",
+            "creator_kind": "User",
+            "description": ""
+          },
+          {
+            "name": "rag-agent-endpoint",
+            "creator": "shardul.patki@theoremlabs.io",
+            "creation_timestamp": 1775860358000,
+            "last_updated_timestamp": 1775860358000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING",
+              "suspend": "NOT_SUSPENDED",
+              "system_update_failure": false
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "rag-agent",
+                  "entity_name": "ace_loan_catalogue.policy_documents.rag_agent",
+                  "entity_version": "1"
+                }
+              ],
+              "served_models": [
+                {
+                  "name": "rag-agent",
+                  "model_name": "ace_loan_catalogue.policy_documents.rag_agent",
+                  "model_version": "1"
+                }
+              ]
+            },
+            "id": "bd536115cb844e09b37c575701e6db2d",
+            "route_optimized": false,
+            "permission_level": "CAN_MANAGE",
+            "creator_display_name": "",
+            "creator_kind": "User",
+            "description": ""
+          },
+          {
+            "name": "supervisor-agent-endpoint",
+            "creator": "shardul.patki@theoremlabs.io",
+            "creation_timestamp": 1776280096000,
+            "last_updated_timestamp": 1776438012000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING",
+              "suspend": "NOT_SUSPENDED",
+              "system_update_failure": false
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "supervisor-agent",
+                  "entity_name": "ace_loan_catalogue.agents.supervisor_agent",
+                  "entity_version": "4",
+                  "type": "UC_MODEL"
+                }
+              ],
+              "served_models": [
+                {
+                  "name": "supervisor-agent",
+                  "model_name": "ace_loan_catalogue.agents.supervisor_agent",
+                  "model_version": "4",
+                  "type": "UC_MODEL"
+                }
+              ]
+            },
+            "id": "5c1dde6fc58c41c4b6e04d5d6a9274b5",
+            "route_optimized": false,
+            "permission_level": "CAN_MANAGE",
+            "ai_gateway": {
+              "usage_tracking_config": {
+                "enabled": false
+              },
+              "inference_table_config": {
+                "catalog_name": "ace_loan_catalogue",
+                "schema_name": "telemetry",
+                "table_name_prefix": "supervisor_agent",
+                "enabled": true
+              }
+            },
+            "creator_display_name": "",
+            "creator_kind": "User",
+            "description": ""
+          },
+          {
+            "name": "databricks-gpt-5-4",
+            "creation_timestamp": 1772668800000,
+            "last_updated_timestamp": 1772668800000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-5-4",
+                  "entity_name": "system.ai.databricks-gpt-5-4",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.databricks-gpt-5-4",
+                    "display_name": "GPT-5.4",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-4",
+                    "description": "GPT-5.4 is a general purpose large language model with reasoning capabilities developed by OpenAI. It delivers improved performance on complex tasks with enhanced accuracy and more deliberate scaffolded reasoning. This model supports multimodal inputs and features a 400K total token context window with 128K maximum output tokens. This endpoint is hosted by Databricks.",
+                    "price": "321.429",
+                    "input_price": "35.714",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt",
+                    "api_types": [
+                      "mlflow/v1/chat/completions",
+                      "openai/v1/responses",
+                      "cursor/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 76.9,
+                      "cost": 5.63,
+                      "quality": 57.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "openai_reasoning": false,
+              "anthropic_reasoning": false,
+              "image_input": true,
+              "long_context": true,
+              "video_input_translation": false,
+              "audio_input_translation": false
+            }
+          },
+          {
+            "name": "databricks-gpt-5-4-mini",
+            "creation_timestamp": 1773705600000,
+            "last_updated_timestamp": 1773705600000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-5-4-mini",
+                  "entity_name": "system.ai.databricks-gpt-5-4-mini",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.databricks-gpt-5-4-mini",
+                    "display_name": "GPT-5.4 Mini",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-4-mini",
+                    "description": "GPT-5.4 Mini is a cost-optimized large language model developed by OpenAI. This endpoint is hosted by Databricks.",
+                    "price": "64.286",
+                    "input_price": "10.714",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt",
+                    "api_types": [
+                      "mlflow/v1/chat/completions",
+                      "openai/v1/responses",
+                      "cursor/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 227.4,
+                      "cost": 1.69,
+                      "quality": 48.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "openai_reasoning": false,
+              "anthropic_reasoning": false,
+              "image_input": true,
+              "long_context": false,
+              "video_input_translation": false,
+              "audio_input_translation": false
+            }
+          },
+          {
+            "name": "databricks-gpt-5-4-nano",
+            "creation_timestamp": 1773705600000,
+            "last_updated_timestamp": 1773705600000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-5-4-nano",
+                  "entity_name": "system.ai.databricks-gpt-5-4-nano",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.databricks-gpt-5-4-nano",
+                    "display_name": "GPT-5.4 Nano",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-4-nano",
+                    "description": "GPT-5.4 Nano is a lightweight, cost-optimized large language model developed by OpenAI. This endpoint is hosted by Databricks.",
+                    "price": "17.857",
+                    "input_price": "2.857",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt",
+                    "api_types": [
+                      "mlflow/v1/chat/completions",
+                      "openai/v1/responses",
+                      "cursor/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 216.8,
+                      "cost": 0.46,
+                      "quality": 44.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "openai_reasoning": false,
+              "anthropic_reasoning": false,
+              "image_input": true,
+              "long_context": false,
+              "video_input_translation": false,
+              "audio_input_translation": false
+            }
+          },
+          {
+            "name": "databricks-gpt-5-2",
+            "creation_timestamp": 1765238400000,
+            "last_updated_timestamp": 1765238400000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-5-2",
+                  "entity_name": "system.ai.databricks-gpt-5-2",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.databricks-gpt-5-2",
+                    "display_name": "GPT-5.2",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-2",
+                    "description": "GPT-5.2 is a general purpose large language model with reasoning capabilities developed by OpenAI. This model builds directly upon GPT-5.1, offering higher accuracy, improved token efficiency on medium-to-complex tasks, and more deliberate scaffolded reasoning. This model excels at structured extraction, multi-step workflows, and multimodal tasks. It supports multimodal inputs and features a 400K total token context window with 128K maximum output tokens. This endpoint is hosted by Databricks.",
+                    "price": "200.0",
+                    "input_price": "25.0",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt",
+                    "api_types": [
+                      "mlflow/v1/chat/completions",
+                      "openai/v1/responses",
+                      "cursor/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 75.8,
+                      "cost": 4.81,
+                      "quality": 51.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "image_input": true
+            }
+          },
+          {
+            "name": "databricks-gpt-oss-120b",
+            "creation_timestamp": 1754179200000,
+            "last_updated_timestamp": 1754179200000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-oss-120b",
+                  "entity_name": "system.ai.gpt-oss-120b",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.gpt-oss-120b",
+                    "display_name": "GPT OSS 120B",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#openai-gpt-120b",
+                    "description": "GPT OSS 120B is a state-of-the-art, reasoning model with chain-of-thought and adjustable reasoning effort levels built and trained by OpenAI. It is OpenAI's flagship open-weight model that features a 128K token context window. The model is built for high-quality reasoning tasks.",
+                    "price": "8.571",
+                    "input_price": "2.143",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt-oss",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 266.5,
+                      "cost": 0.26,
+                      "quality": 33.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "openai_reasoning": true
+            }
+          },
+          {
+            "name": "databricks-gpt-5-3-codex",
+            "creation_timestamp": 1771891200000,
+            "last_updated_timestamp": 1771891200000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-5-3-codex",
+                  "entity_name": "system.ai.databricks-gpt-5-3-codex",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.databricks-gpt-5-3-codex",
+                    "display_name": "GPT-5.3 Codex",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-3-codex",
+                    "description": "GPT-5.3 Codex is OpenAI's advanced code-specialized large language model. This endpoint is hosted by Databricks.",
+                    "price": "200.0",
+                    "input_price": "25.0",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt",
+                    "api_types": [
+                      "openai/v1/responses",
+                      "cursor/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 67.2,
+                      "cost": 4.81,
+                      "quality": 54.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "openai_reasoning": false,
+              "anthropic_reasoning": false,
+              "image_input": true,
+              "long_context": false,
+              "video_input_translation": false,
+              "audio_input_translation": false
+            }
+          },
+          {
+            "name": "databricks-gpt-5-2-codex",
+            "creation_timestamp": 1767139200000,
+            "last_updated_timestamp": 1767139200000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-5-2-codex",
+                  "entity_name": "system.ai.databricks-gpt-5-2-codex",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.databricks-gpt-5-2-codex",
+                    "display_name": "GPT-5.2 Codex",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-2-codex",
+                    "description": "GPT-5.2 Codex is OpenAI's most advanced code-specialized large language model. Built on GPT-5.2 architecture with enhanced coding capabilities, it excels at code generation, refactoring, debugging, and software engineering tasks. The model supports multimodal inputs and features a 400K total token context window with 128K maximum output tokens. This endpoint is hosted by Databricks.",
+                    "price": "200.0",
+                    "input_price": "25.0",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt",
+                    "api_types": [
+                      "openai/v1/responses",
+                      "cursor/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 115.5,
+                      "cost": 4.81,
+                      "quality": 49.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "openai_reasoning": false,
+              "anthropic_reasoning": false,
+              "image_input": true,
+              "long_context": false,
+              "video_input_translation": false,
+              "audio_input_translation": false
+            }
+          },
+          {
+            "name": "databricks-gpt-oss-20b",
+            "creation_timestamp": 1754179200000,
+            "last_updated_timestamp": 1754179200000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-oss-20b",
+                  "entity_name": "system.ai.gpt-oss-20b",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.gpt-oss-20b",
+                    "display_name": "GPT OSS 20B",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#openai-gpt-20b",
+                    "description": "GPT OSS 20B is a state-of-the-art, lightweight reasoning model built and trained by OpenAI. This model also has a 128K token context window and excels at real-time copilots and batch inference tasks.",
+                    "price": "4.286",
+                    "input_price": "1.0",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt-oss",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 263.7,
+                      "cost": 0.09,
+                      "quality": 24.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "openai_reasoning": true
+            }
+          },
+          {
+            "name": "databricks-qwen3-next-80b-a3b-instruct",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-qwen3-next-80b-a3b-instruct",
+                  "entity_name": "system.ai.qwen3-next-80b-a3b-instruct",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.qwen3-next-80b-a3b-instruct",
+                    "display_name": "Qwen3 Next Instruct",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#qwen3-next-80b-a3b-instruct",
+                    "description": "Qwen3-Next-80B-A3B-Instruct is a highly efficient large language model optimized for instruction-following tasks built and trained by Alibaba Cloud. This model is designed to handle ultra-long contexts and excels at multi-step workflows, retrieval-augmented generation, and enterprise applications that require deterministic outputs at high throughput. This endpoint is hosted by Databricks.",
+                    "price": "17.143",
+                    "input_price": "2.143",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "qwen",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 152.0,
+                      "cost": 0.88,
+                      "quality": 20.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true
+            }
+          },
+          {
+            "name": "databricks-llama-4-maverick",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-llama-4-maverick",
+                  "entity_name": "system.ai.llama-4-maverick",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.llama-4-maverick",
+                    "display_name": "Llama 4 Maverick",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-4-maverick",
+                    "description": "Llama 4 Maverick is a state-of-the-art mixture of experts (MoE) language model trained and released by Meta. The model has 17B active parameters, 128 experts, and 400 billion total parameters. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases, supporting 12 languages, and is aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Llama 4 is licensed under the Meta Llama 4 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
+                    "price": "21.429",
+                    "input_price": "7.143",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "llama",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 123.5,
+                      "cost": 0.49,
+                      "quality": 18.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "image_input": true
+            }
+          },
+          {
+            "name": "databricks-gemma-3-12b",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gemma-3-12b",
+                  "entity_name": "system.ai.gemma-3-12b-it",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.gemma-3-12b-it",
+                    "display_name": "Gemma 3 12B",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#google-gemma-3-12b",
+                    "description": "Gemma 3 12B is a state-of-the-art multimodal language model built and trained by Google. The model supports a context length of 128K tokens and can analyze images and text. With support for over 140 languages and optimized for dialogue use cases, Gemma 3 12B is aligned with human preferences for helpfulness and safety. This endpoint is hosted by Databricks.",
+                    "price": "7.143",
+                    "input_price": "2.143",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gemma-3",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 29.2,
+                      "cost": 0.0,
+                      "quality": 9.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "image_input": true
+            }
+          },
+          {
+            "name": "databricks-gte-large-en",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gte-large-en",
+                  "entity_name": "system.ai.gte_large_en_v1_5",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.gte_large_en_v1_5",
+                    "display_name": "GTE Large (En)",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gte-large",
+                    "description": "General text embeddings (GTE) can map any text to a low-dimensional dense vector which can be used for tasks like retrieval, classification, clustering, or semantic search. And it also can be used in vector databases for LLMs.",
+                    "price": "1.857",
+                    "input_price": "1.857",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gte",
+                    "api_types": [
+                      "mlflow/v1/embeddings"
+                    ],
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/embeddings",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {}
+          },
+          {
+            "name": "databricks-bge-large-en",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-bge-large-en",
+                  "entity_name": "system.ai.bge_large_en_v1_5",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.bge_large_en_v1_5",
+                    "display_name": "BGE Large (En)",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#bge-large",
+                    "description": "BAAI general embedding (BGE) can map any text to a low-dimensional dense vector which can be used for tasks like retrieval, classification, clustering, or semantic search. And it also can be used in vector databases for LLMs.",
+                    "price": "1.429",
+                    "input_price": "1.429",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gte",
+                    "api_types": [
+                      "mlflow/v1/embeddings"
+                    ],
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/embeddings",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {}
+          },
+          {
+            "name": "databricks-gpt-5-1",
+            "creation_timestamp": 1762992000000,
+            "last_updated_timestamp": 1762992000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-gpt-5-1",
+                  "entity_name": "system.ai.databricks-gpt-5-1",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.databricks-gpt-5-1",
+                    "display_name": "GPT-5.1",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#gpt-5-1",
+                    "description": "GPT-5.1 is a general purpose large language model with reasoning capabilities developed by OpenAI. This model features both Instant and Thinking modes for fast conversation or deep reasoning, automatically adjusting for simple or complex tasks. The model excels at content creation, tutoring, technical support, and coding, with less reliance on strict prompt engineering than prior versions. It supports multimodal inputs and features a 128K token context window. This endpoint is hosted by Databricks.",
+                    "price": "142.857",
+                    "input_price": "17.857",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "gpt",
+                    "api_types": [
+                      "mlflow/v1/chat/completions",
+                      "openai/v1/responses",
+                      "cursor/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 105.7,
+                      "cost": 3.44,
+                      "quality": 48.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true,
+              "image_input": true
+            }
+          },
+          {
+            "name": "databricks-meta-llama-3-1-8b-instruct",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-meta-llama-3-1-8b-instruct",
+                  "entity_name": "system.ai.meta_llama_v3_1_8b_instruct",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.meta_llama_v3_1_8b_instruct",
+                    "display_name": "Meta Llama 3.1 8B Instruct",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-3-8b-instruct",
+                    "description": "Llama 3.1 is a state-of-the-art 8B parameter dense language model trained and released by Meta. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases and aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Meta Llama 3.1 is licensed under the Meta Llama 3.1 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
+                    "price": "6.429",
+                    "input_price": "2.143",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "llama",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 156.4,
+                      "cost": 0.1,
+                      "quality": 12.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {}
+          },
+          {
+            "name": "databricks-meta-llama-3-3-70b-instruct",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-meta-llama-3-3-70b-instruct",
+                  "entity_name": "system.ai.llama_v3_3_70b_instruct",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.llama_v3_3_70b_instruct",
+                    "display_name": "Meta Llama 3.3 70B Instruct",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-33-70b-instruct",
+                    "description": "Llama 3.3 is a state-of-the-art 70B parameter dense language model trained and released by Meta. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases and aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Meta Llama 3.3 is licensed under the Meta Llama 3.3 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
+                    "price": "21.429",
+                    "input_price": "7.143",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "llama",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_model_profile": {
+                      "speed": 86.0,
+                      "cost": 0.64,
+                      "quality": 14.0
+                    },
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true
+            }
+          },
+          {
+            "name": "databricks-qwen3-embedding-0-6b",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-qwen3-embedding-0-6b",
+                  "entity_name": "system.ai.qwen3-embedding-0-6b",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.qwen3-embedding-0-6b",
+                    "display_name": "Qwen3 Embedding 0.6B",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#qwen3-embedding-0-6b",
+                    "description": "Qwen3 Embedding is a multilingual text embedding model that can map any text to a low-dimensional dense vector which can be used for tasks like retrieval, classification, clustering, or semantic search. This endpoint is hosted by Databricks.",
+                    "price": "0.286",
+                    "input_price": "0.286",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "qwen",
+                    "api_types": [
+                      "mlflow/v1/embeddings"
+                    ],
+                    "ai_gateway_v2_supported": true
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/embeddings",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {}
+          },
+          {
+            "name": "databricks-meta-llama-3.1-405b-instruct",
+            "creation_timestamp": 1699610000000,
+            "last_updated_timestamp": 1699610000000,
+            "state": {
+              "ready": "READY",
+              "config_update": "NOT_UPDATING"
+            },
+            "config": {
+              "served_entities": [
+                {
+                  "name": "databricks-meta-llama-3.1-405b-instruct",
+                  "entity_name": "system.ai.meta_llama_v3_1_405b_instruct_fp8",
+                  "type": "FOUNDATION_MODEL",
+                  "foundation_model": {
+                    "name": "system.ai.meta_llama_v3_1_405b_instruct_fp8",
+                    "display_name": "Meta Llama 3.1 405B Instruct",
+                    "docs": "https://docs.databricks.com/machine-learning/foundation-models/supported-models.html#meta-llama-31-405b-instruct",
+                    "description": "Llama 3.1 is a state-of-the-art 405B parameter dense language model trained and released by Meta. The model supports a context length of 128K tokens. The model is optimized for multilingual dialogue use cases and aligned with human preferences for helpfulness and safety. It is not intended for use in languages other than English. Meta Llama 3.1 is licensed under the Meta Llama 3.1 Community License, Copyright \u00a9 Meta Platforms, Inc. All Rights Reserved. Customers are responsible for ensuring compliance with applicable model licenses.",
+                    "price": "142.857",
+                    "input_price": "35.714",
+                    "price_unit": "DBUs per 1M tokens",
+                    "pricing_model": "Pay-per-token",
+                    "model_class": "llama",
+                    "api_types": [
+                      "mlflow/v1/chat/completions"
+                    ],
+                    "ai_gateway_v2_supported": false
+                  }
+                }
+              ]
+            },
+            "task": "llm/v1/chat",
+            "endpoint_type": "FOUNDATION_MODEL_API",
+            "permission_level": "CAN_MANAGE",
+            "capabilities": {
+              "function_calling": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/2.0/permissions/serving-endpoints/4078c03bb92a4a2e9a91132f836c2ed0",
+      "params": null,
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:46.278313+00:00",
+      "body": {
+        "object_id": "/serving-endpoints/4078c03bb92a4a2e9a91132f836c2ed0",
+        "object_type": "serving-endpoint",
+        "access_control_list": [
+          {
+            "group_name": "admins",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": true,
+                "inherited_from_object": [
+                  "/serving-endpoints"
+                ]
+              }
+            ]
+          },
+          {
+            "user_name": "shardul.patki@theoremlabs.io",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/2.0/permissions/serving-endpoints/bd536115cb844e09b37c575701e6db2d",
+      "params": null,
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:46.485812+00:00",
+      "body": {
+        "object_id": "/serving-endpoints/bd536115cb844e09b37c575701e6db2d",
+        "object_type": "serving-endpoint",
+        "access_control_list": [
+          {
+            "group_name": "admins",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": true,
+                "inherited_from_object": [
+                  "/serving-endpoints"
+                ]
+              }
+            ]
+          },
+          {
+            "user_name": "shardul.patki@theoremlabs.io",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/2.0/permissions/serving-endpoints/5c1dde6fc58c41c4b6e04d5d6a9274b5",
+      "params": null,
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:46.676295+00:00",
+      "body": {
+        "object_id": "/serving-endpoints/5c1dde6fc58c41c4b6e04d5d6a9274b5",
+        "object_type": "serving-endpoint",
+        "access_control_list": [
+          {
+            "service_principal_name": "efee8f27-f366-47da-8c7a-51f08ce34231",
+            "display_name": "app-1683a9 ace-chat-app",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_QUERY",
+                "inherited": false
+              }
+            ]
+          },
+          {
+            "user_name": "shardul.patki@theoremlabs.io",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": false
+              }
+            ]
+          },
+          {
+            "group_name": "admins",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": true,
+                "inherited_from_object": [
+                  "/serving-endpoints"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/2.0/permissions/authorization/tokens",
+      "params": null,
+      "status": 200,
+      "timestamp": "2026-04-17T18:11:46.836272+00:00",
+      "body": {
+        "object_id": "/authorization/tokens",
+        "object_type": "tokens",
+        "access_control_list": [
+          {
+            "group_name": "admins",
+            "all_permissions": [
+              {
+                "permission_level": "CAN_MANAGE",
+                "inherited": false
+              }
+            ]
           }
         ]
       }

@@ -7,6 +7,7 @@ workspace via REST:
 2. **Clusters** — current state, node type, sizing, uptime
 3. **Serving endpoints** — Model Serving endpoints and their readiness
 4. **Endpoint events** — recent config-change and deployment events
+5. **Permissions** — ACL grants on jobs, clusters, serving endpoints, and the workspace token ACL
 
 Traffic metrics, latency, CPU, and memory are deliberately not shown: the
 public `/metrics` route only emits per-minute request counters (which idle
@@ -48,7 +49,7 @@ python main.py --output json > snapshot.json
 |-------------|---------------------------------------|---------|
 | `--output`  | `table`, `json`                       | `table` |
 | `--hours`   | integer (job-runs lookback)           | `24`    |
-| `--section` | `jobs`, `clusters`, `endpoints`, `endpoint-events`, `all` | `all`   |
+| `--section` | `jobs`, `clusters`, `endpoints`, `endpoint-events`, `permissions`, `all` | `all`   |
 
 ## Example output
 
@@ -71,6 +72,7 @@ collectors/
     jobs.py          # /api/2.1/jobs/runs/list
     clusters.py      # /api/2.0/clusters/list
     endpoints.py     # /api/2.0/serving-endpoints (+ /metrics, /events)
+    permissions.py   # /api/2.0/permissions/{jobs,clusters,serving-endpoints,authorization/tokens}
 output.py            # rich table + JSON renderers
 ```
 
