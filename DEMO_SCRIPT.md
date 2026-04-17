@@ -72,7 +72,13 @@ Run each section one at a time so the audience sees a clean, single-purpose tabl
 python main.py --section jobs
 python main.py --section clusters
 python main.py --section endpoints
+python main.py --section endpoint-metrics
+python main.py --section endpoint-events
 ```
+
+The last two go a level deeper on Model Serving: `endpoint-metrics` parses
+the Prometheus `/metrics` route for per-endpoint request / 4xx / 5xx
+counters; `endpoint-events` lists recent config / deployment events.
 
 Then the full view:
 
@@ -96,8 +102,10 @@ pipelines get JSON."*
 **Known limits (be upfront):**
 - No historical storage — every run is a fresh snapshot.
 - No alerting — just prints to the terminal.
-- Traffic metrics (QPS, latency, token usage) for serving endpoints aren't
-  here; those live in Databricks `system.serving.*` tables.
+- Coarse request counters for serving endpoints (total / 4xx / 5xx) are
+  included via the Prometheus `/metrics` route, but latency, CPU, memory,
+  and per-request traces live in Databricks `system.serving.*` inference
+  tables.
 
 **Natural next steps:**
 - **Schedule it.** Wrap `python main.py --output json` in a nightly cron or

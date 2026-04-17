@@ -55,6 +55,17 @@ class DatabricksClient:
         response.raise_for_status()
         return response.json()
 
+    def get_text(self, path: str) -> str:
+        """GET {host}{path} and return the raw text body.
+
+        Used for endpoints that return Prometheus/OpenMetrics text
+        (e.g. /api/2.0/serving-endpoints/{name}/metrics) rather than JSON.
+        """
+        url = f"{self.host}{path}"
+        response = self.session.get(url, headers={"Accept": "text/plain"}, timeout=30)
+        response.raise_for_status()
+        return response.text
+
     def post(self, path: str, json: Optional[dict] = None) -> dict[str, Any]:
         """POST JSON to {host}{path} and return parsed JSON."""
         url = f"{self.host}{path}"

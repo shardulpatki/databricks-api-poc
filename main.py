@@ -42,13 +42,30 @@ ENDPOINT_COLUMNS = [
     ("creator", "Creator"),
     ("created", "Created"),
 ]
+ENDPOINT_METRICS_COLUMNS = [
+    ("name", "Endpoint"),
+    ("requests", "Requests"),
+    ("errors_4xx", "4xx"),
+    ("errors_5xx", "5xx"),
+]
+ENDPOINT_EVENTS_COLUMNS = [
+    ("endpoint", "Endpoint"),
+    ("event_type", "Event"),
+    ("status", "Status"),
+    ("message", "Message"),
+    ("timestamp", "When"),
+]
 
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Pull observability metrics from Databricks via REST.")
     p.add_argument("--output", choices=["table", "json"], default="table")
     p.add_argument("--hours", type=int, default=24, help="Lookback window for job runs (default 24).")
-    p.add_argument("--section", choices=["jobs", "clusters", "endpoints", "all"], default="all")
+    p.add_argument(
+        "--section",
+        choices=["jobs", "clusters", "endpoints", "endpoint-metrics", "endpoint-events", "all"],
+        default="all",
+    )
     return p.parse_args()
 
 
@@ -59,6 +76,10 @@ def collect(section: str, client: DatabricksClient, hours: int) -> list[dict]:
         return clusters_collector.fetch(client)
     if section == "endpoints":
         return endpoints_collector.fetch(client)
+    if section == "endpoint-metrics":
+        return endpoints_collector.fetch_metrics(client)
+    if section == "endpoint-events":
+        return endpoints_collector.fetch_events(client)
     raise ValueError(f"unknown section: {section}")
 
 
@@ -66,6 +87,8 @@ SECTION_META = {
     "jobs": ("Job Runs", JOB_COLUMNS),
     "clusters": ("Clusters", CLUSTER_COLUMNS),
     "endpoints": ("Serving Endpoints", ENDPOINT_COLUMNS),
+    "endpoint-metrics": ("Serving Endpoint Traffic", ENDPOINT_METRICS_COLUMNS),
+    "endpoint-events": ("Serving Endpoint Events", ENDPOINT_EVENTS_COLUMNS),
 }
 
 
@@ -79,7 +102,8 @@ def main() -> int:
         print(f"Configuration error: {e}", file=sys.stderr)
         return 2
 
-    sections = ["jobs", "clusters", "endpoints"] if args.section == "all" else [args.section]
+    all_sections = ["jobs", "clusters", "endpoints", "endpoint-metrics", "endpoint-events"]
+    sections = all_sections if args.section == "all" else [args.section]
 
     results: dict[str, list[dict]] = {}
     for section in sections:
